@@ -7,11 +7,11 @@
   z-index: 1000; /* 메뉴가 다른 요소 위에 렌더링되도록 설정 */
 }
 
-/* 햄버거 버튼 스타일 */
+/* 햄버거 버튼 스타일 (오른쪽 상단) */
 .menu-toggle {
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px; /* 오른쪽으로 위치 고정 */
   background: #333;
   color: white;
   border: none;
@@ -26,25 +26,23 @@
 .side-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0; /* 오른쪽에 메뉴 고정 */
   height: 100%;
   width: 250px;
   background: #333; /* 배경색 */
   color: white; /* 텍스트 색상 */
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  transform: translateX(-100%); /* 초기 닫힌 상태 */
-  transition: transform 0.3s ease-in-out; /* 열림/닫힘 애니메이션 */
+  transform: translateX(100%); /* 닫힌 상태에서 왼쪽밖으로 */
+  transition: transform 0.3s ease-in-out; /* 부드러운 열림/닫힘 */
 }
 
 /* 열린 상태 */
 .side-menu.open {
-  transform: translateX(0); /* 메뉴가 열림 */
+  transform: translateX(0); /* 화면 안으로 들어옴 */
 }
 
 /* 닫힌 상태 */
 .side-menu.closed {
-  transform: translateX(-100%); /* 메뉴가 닫힘 */
+  transform: translateX(100%); /* 다시 오른쪽으로 닫힘 */
 }
 
 /* 메뉴 리스트 스타일 */
